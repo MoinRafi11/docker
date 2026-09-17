@@ -145,7 +145,7 @@ This confirms that the Docker service is installed and currently running.
 
 ### Screenshot
 
-![Docker Installation and Service Verification](screenshots/04-verify-installation-check-docker-service.png.png)
+![Docker Installation and Service Verification](screenshots/04-verify-installation-check-docker-services.png.png)
 
 ---
 
