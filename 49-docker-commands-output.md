@@ -135,7 +135,7 @@ The output includes:
 
 ### Screenshot
 
-![Docker Images](screenshots/05-docker-images.png)
+![Docker Images](screenshots/05-docker-image.png)
 
 ---
 
