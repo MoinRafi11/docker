@@ -24,7 +24,7 @@ The `httpd` image provides the Apache HTTP Server used in this exercise.
 
 ### Screenshot
 
-![Docker Pull HTTPD](screenshots/Screenshot(181).png)
+![Docker Pull HTTPD](<screenshots/Screenshot (181).png>)
 
 ---
 
@@ -62,7 +62,7 @@ Host Port 8081 → Container Port 80
 
 ### Screenshot
 
-![Run Apache with Port Mapping](screenshots/Screenshot(182).png)
+![Run Apache with Port Mapping](<screenshots/Screenshot (182).png>)
 
 ---
 
@@ -86,7 +86,7 @@ Expected mapping:
 
 ### Screenshot
 
-![Docker PS Port Mapping](screenshots/Screenshot(183).png)
+![Docker PS Port Mapping](<screenshots/Screenshot (183).png>)
 
 ---
 
@@ -108,7 +108,7 @@ The official Apache HTTPD image serves web files from:
 
 ### Screenshot
 
-![Copy Custom HTML Page](screenshots/Screenshot(184).png)
+![Copy Custom HTML Page](<screenshots/Screenshot (184).png>)
 
 ---
 
@@ -126,7 +126,7 @@ The output confirms that `index.html` is present.
 
 ### Screenshot
 
-![HTML File Inside Container](screenshots/Screenshot(185).png)
+![HTML File Inside Container](<screenshots/Screenshot (185).png>)
 
 ---
 
@@ -154,7 +154,7 @@ Container Port 80 → Host Port 8081
 
 ### Screenshot
 
-![Docker Port Mapping](screenshots/Screenshot(186).png)
+![Docker Port Mapping](<screenshots/Screenshot (186).png>)
 
 ---
 
@@ -174,7 +174,7 @@ This verifies that the request is successfully travelling through the Docker por
 
 ### Screenshot
 
-![curl Custom Page](screenshots/Screenshot(187).png)
+![curl Custom Page](<screenshots/Screenshot (187).png>)
 
 ---
 
@@ -206,7 +206,7 @@ and indicates that the Apache HTTP Server is running inside the Docker container
 
 ### Screenshot
 
-![Custom Docker Port Mapping Page](screenshots/Screenshot(191).png)
+![Custom Docker Port Mapping Page](<screenshots/Screenshot (191).png>)
 
 ---
 
