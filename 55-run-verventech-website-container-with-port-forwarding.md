@@ -16,7 +16,7 @@ sudo docker pull verventech/verventech-website
 
 The image was downloaded successfully.
 
-![Pull Verventech Website Image](<screenshots/Screenshot (193)(1).png>)
+![Pull Verventech Website Image](<screenshots/Screenshot (193).png>)
 
 ## 2. Verify the Docker Image
 
@@ -26,7 +26,7 @@ sudo docker images
 
 The output confirms that `verventech/verventech-website:latest` is available locally.
 
-![Verify Verventech Website Image](<screenshots/Screenshot (194)(1).png>)
+![Verify Verventech Website Image](<screenshots/Screenshot (194).png>)
 
 ## 3. Run the Website Container with Port Forwarding
 
