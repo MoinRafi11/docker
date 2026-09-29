@@ -38,7 +38,7 @@ sudo docker inspect volume-demo
 
 The `Mounts` section shows the volume attached to the container.
 
-![Docker Volume Mount](screenshots/58-01-create-volume.png)
+![Docker Volume Mount](screenshots/58-02-volume.png)
 
 ---
 
