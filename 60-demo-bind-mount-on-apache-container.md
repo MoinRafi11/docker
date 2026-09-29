@@ -1,14 +1,12 @@
 # Demo: Bind Mount on Apache Container
 
-This project demonstrates how a **bind mount** can be used to serve website files from the host system using an Apache container.
-
-The host directory is mounted directly into the Apache container.
+This project demonstrates how a **bind mount** can be used to serve website files from a host directory using an Apache container.
 
 ---
 
-## 1. Create the Host Directory
+## 1. Create the Host Directory and HTML File
 
-Create a directory on the host:
+Create a directory for the website files:
 
 ```bash
 mkdir apache-bind-data
@@ -47,13 +45,13 @@ Verify the file:
 cat index.html
 ```
 
-![Create Host HTML File](screenshots/Screenshot%20(329).png)
+![Create Host HTML File](screenshots/Screenshot%20(326).png)
 
 ---
 
-## 2. Run Apache Container with Bind Mount
+## 2. Run the Apache Container
 
-Run an Apache container and mount the host directory to Apache's document root:
+Run an Apache container and bind mount the host directory to Apache's document root:
 
 ```bash
 sudo docker run -d \
@@ -69,85 +67,110 @@ Check the running container:
 sudo docker ps
 ```
 
+The bind mount connects:
+
+```text
+Host:
+/home/moin/apache-bind-data
+
+Container:
+/usr/local/apache2/htdocs
+```
+
 ![Apache Container with Bind Mount](screenshots/Screenshot%20(327).png)
 
 ---
 
 ## 3. Access the Website
 
-Open the following address in a browser:
+Open the Apache website in a browser:
 
 ```text
 http://192.168.1.16:8080
 ```
 
-The webpage is being served by Apache from the host directory through the bind mount.
+The HTML file from the host directory is served by Apache inside the container.
 
-![Apache Website](screenshots/Screenshot%20(326).png)
+![Apache Website](screenshots/Screenshot%20(330).png)
 
 ---
 
-## 4. Modify the Host File
+## 4. Modify the File on the Host
 
-Change the content of the `index.html` file on the host:
+Because the host directory is bind-mounted, changes made to the host file are reflected inside the container.
+
+Modify the file:
 
 ```bash
 nano index.html
 ```
 
-For example:
+For example, change the heading to:
 
 ```html
 <h1>HIII!!! Updated from the host</h1>
 ```
 
-Save the file and refresh the browser.
+Verify the updated file:
 
-The updated content is immediately available because the host directory is bind-mounted into the Apache container.
+```bash
+cat index.html
+```
 
-![Updated Apache Website](screenshots/Screenshot%20(330).png)
+![Updated Host HTML File](screenshots/Screenshot%20(329).png)
 
 ---
 
-## 5. Verify the Bind Mount
+## 5. Verify the Change in the Browser
 
-The bind mount can be verified using:
+Refresh the browser:
+
+```text
+http://192.168.1.16:8080
+```
+
+The updated content is displayed without recreating the container.
+
+![Updated Apache Website](screenshots/Screenshot%20(331).png)
+
+---
+
+## 6. Verify the Bind Mount
+
+The bind mount can also be verified using:
 
 ```bash
 sudo docker inspect apache-bind-demo
 ```
 
-The `Mounts` section shows:
+Look for the `Mounts` section. It will show the host directory and the container destination.
+
+Expected values:
 
 ```text
-"Type": "bind"
-"Source": "/home/moin/apache-bind-data"
-"Destination": "/usr/local/apache2/htdocs"
+Type: bind
+Source: /home/moin/apache-bind-data
+Destination: /usr/local/apache2/htdocs
 ```
-
-![Verify Bind Mount](screenshots/Screenshot%20(331).png)
 
 ---
 
 ## How It Works
 
 ```text
-Host
+Host Directory
 /home/moin/apache-bind-data
           │
           │ Bind Mount
           ▼
-Container
+Apache Container
 /usr/local/apache2/htdocs
           │
           ▼
-       Apache
-          │
-          ▼
-      Web Browser
+     Web Browser
 ```
 
-The files remain on the host while Apache serves them from inside the container.
+Changes made to the files in the host directory are available to Apache through the bind mount.
 
 ---
 
@@ -181,8 +204,9 @@ sudo docker rm apache-bind-demo
 
 ## Summary
 
-- A host directory was created for the website files.
-- The directory was bind-mounted into an Apache container.
-- Apache served the HTML file from the mounted directory.
-- Changes made to the host file were reflected in the running container.
-- `docker inspect` was used to verify the bind mount.
+- Created a host directory containing an HTML file.
+- Mounted the directory into an Apache container using a bind mount.
+- Accessed the website through Apache.
+- Modified the HTML file directly on the host.
+- Verified that the changes were immediately reflected in the browser.
+- Used `docker inspect` to verify the bind mount.
