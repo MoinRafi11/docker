@@ -21,7 +21,7 @@ dockerfile-demo/
 └── index.html
 ```
 
-### Check the files
+Check the files:
 
 ```bash
 ls -la
@@ -86,7 +86,7 @@ Here:
 - `.` specifies the current directory as the build context.
 - Docker automatically looks for a file named `Dockerfile`.
 
-![Docker Build and Image](screenshots/Screenshot%202026-09-30%20120749.png)
+![Docker Build and Image](screenshots/Screenshot%20(338).png)
 
 ### Verify the Image
 
@@ -135,13 +135,13 @@ Check the running containers:
 sudo docker ps
 ```
 
-The container should show port mapping similar to:
+The container should show a port mapping similar to:
 
 ```text
 0.0.0.0:8080->80/tcp
 ```
 
-![Running Dockerfile Container](screenshots/Screenshot%20%202026-09-30%20120749.png)
+![Running Dockerfile Container](screenshots/Screenshot%202026-09-30%20120749.png)
 
 ---
 
@@ -161,7 +161,7 @@ http://192.168.1.16:8080
 
 The webpage should be served by the Nginx container.
 
-![Dockerfile Demo Website](screenshots/Screenshot%20%202026-09-30%20120844.png)
+![Dockerfile Demo Website](screenshots/Screenshot%202026-09-30%20120844.png)
 
 ---
 
