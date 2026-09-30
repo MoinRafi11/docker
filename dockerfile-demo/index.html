@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dockerfile Demo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #0b0f14;
+            color: #f1f1f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .badge {
+            display: inline-block;
+            color: #d49a62;
+            font-size: 13px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            color: #d49a62;
+        }
+
+        .intro {
+            max-width: 650px;
+            color: #aeb6c0;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: #121820;
+            border: 1px solid #27303a;
+            border-radius: 14px;
+            padding: 25px;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #d49a62;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .card p {
+            color: #929ba6;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .footer {
+            margin-top: 35px;
+            color: #68717c;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="badge">DOCKER / DOCKERFILE</div>
+
+        <h1>
+            Build it.<br>
+            <span>Containerize it.</span>
+        </h1>
+
+        <p class="intro">
+            A practical Dockerfile demonstration showing how application
+            files are packaged into a Docker image and served from a
+            container.
+        </p>
+
+        <section class="cards">
+
+            <div class="card">
+                <h3>FROM</h3>
+                <p>
+                    Defines the base image used to build the application.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>COPY</h3>
+                <p>
+                    Copies application files from the build context into
+                    the image.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>CMD</h3>
+                <p>
+                    Defines the default command that runs when the
+                    container starts.
+                </p>
+            </div>
+
+        </section>
+
+        <div class="footer">
+            Dockerfile Usage Demo · Built for hands-on Docker practice
+        </div>
+
+    </main>
+
+</body>
+</html>
